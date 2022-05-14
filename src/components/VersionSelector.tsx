@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { ChoiceGroup } from "office-ui-fabric-react";
 import DatePicker from 'react-date-picker';
-
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { versions, defaultVersion } from '../util/defaults'
 
 const VersionSelector = ({updater, releaseType, Table}) => {
+  const { t } = useTranslation()
   const [version, udateVersion] = useState({version: defaultVersion});
   const [numBuilds, udateNumBuilds] = useState({number: 5});
   const [buildDate, updateBuildDate] = useState(new Date());  
@@ -37,7 +38,7 @@ const VersionSelector = ({updater, releaseType, Table}) => {
     <>
       <div className="btn-container">
         <form id="version-selector" className="btn-form">
-          <h3>Choose a Version</h3>
+          <h3>{t('versionSelector_choose_version')}</h3>
           <ChoiceGroup
             className="d-flex justify-content-center"
             defaultSelectedKey={defaultVersion}
@@ -47,7 +48,7 @@ const VersionSelector = ({updater, releaseType, Table}) => {
       </div>
       {releaseType === "ea" && (
         <div className="input-group p-5 d-flex justify-content-center">
-          <span className='p-2'>View</span>
+          <span className='p-2'>{t('versionSelector_nightly_view')}</span>
           <select id="build-num-filter" onChange={(e) => setNumBuilds(e.target.value)} defaultValue={numBuilds.number} className="form-select form-select-sm" style={{ maxWidth: '5em' }}>
             <option key={1} value={1}>1</option>
             <option key={5} value={5}>5</option>
@@ -55,7 +56,7 @@ const VersionSelector = ({updater, releaseType, Table}) => {
             <option key={20} value={20}>20</option>
             <option key={50} value={50}>50</option>
           </select>
-          <span className='p-2'>nightly builds prior to:</span>
+          <span className='p-2'>{t('versionSelector_nightly_prior_to_date')}</span>
           <DatePicker
             value={buildDate}
             maxDate={new Date()}
