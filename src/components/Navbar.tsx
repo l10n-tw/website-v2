@@ -74,9 +74,11 @@ const Navbar = ({siteTitle}): JSX.Element => {
                 {t('navbar_furtherInformation')}
               </Link>
               <ul className="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+                <li><ExactNavLink className="dropdown-item" to="/news">{t('navbar_news')}</ExactNavLink></li>
                 <li><ExactNavLink className="dropdown-item" to="/about">{t('navbar_about')}</ExactNavLink></li>
                 <li><ExactNavLink className="dropdown-item" to="/members">{t('navbar_members')}</ExactNavLink></li>
                 <li><ExactNavLink className="dropdown-item" to="/sponsors">{t('navbar_sponsors')}</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/temurin/buttons">Promote</ExactNavLink></li>
                 <li><a className="nav-link" href="https://api.adoptium.net">{t('navbar_api')}</a></li>
                 <li><a className="nav-link" href="https://blog.adoptium.net">{t('navbar_blog')}</a></li>
                 <li><a className="nav-link" href="https://status.adoptium.net">{t('navbar_status')}</a></li>
