@@ -5,12 +5,12 @@ import VendorSelector from './VendorSelector'
 import { detectOS, UserOS } from '../util/detectOS';
 import { capitalize } from '../util/capitalize';
 import { oses, arches, packageTypes, versions, defaultVersion, defaultArchitecture, defaultPackageType} from '../util/defaults'
-
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 let defaultOS = 'any'
 let defaultArch = 'any'
 
 const DownloadDropdowns = ({updaterAction, marketplace, Table}) => {
-
+    const { t } = useTranslation()
     if (marketplace) {
         defaultArch = defaultArchitecture;
         const userOS = detectOS();
@@ -70,9 +70,9 @@ const DownloadDropdowns = ({updaterAction, marketplace, Table}) => {
             {marketplace && <VendorSelector checkboxRef={checkboxRef} setCheckbox={setCheckbox} />}
             <div className="input-group mb-5 row g-2">
                 <div className="input-group-prepend flex-colunm col-12 col-md-3">
-                    <label className="px-2 fw-bold" htmlFor="os">Operating System</label>
+                    <label className="px-2 fw-bold" htmlFor="os">{t('downloadDropdowns_OS')}</label>
                     <select id="os-filter" onChange={(e) => setOS(e.target.value)} defaultValue={defaultOS} className="form-select form-select-sm">
-                        <option key="any" value="any">Any</option>
+                        <option key="any" value="any">{t('downloadDropdowns_option_any')}</option>
                         {oses.map(
                             (os, i): string | JSX.Element => os && (
                                 <option key={os.toLowerCase()} value={os.toLowerCase()}>{capitalize(os)}</option>
@@ -81,9 +81,9 @@ const DownloadDropdowns = ({updaterAction, marketplace, Table}) => {
                     </select>
                 </div>
                 <div className="input-group-prepend flex-colunm col-12 col-md-3">
-                    <label className="px-2 fw-bold" htmlFor="arch">Architecture</label>
+                    <label className="px-2 fw-bold" htmlFor="arch">{t('downloadDropdowns_arch')}</label>
                     <select id="arch-filter" onChange={(e) => setArch(e.target.value)} defaultValue={defaultArch} className="form-select form-select-sm">
-                        <option key="any" value="any">Any</option>
+                        <option key="any" value="any">{t('downloadDropdowns_option_any')}</option>
                         {arches.map(
                             (arch, i): string | JSX.Element => arch && (
                                 <option key={arch.toLowerCase()} value={arch.toLowerCase()}>{arch}</option>
@@ -92,9 +92,9 @@ const DownloadDropdowns = ({updaterAction, marketplace, Table}) => {
                     </select>
                 </div>
                 <div className="input-group-prepend flex-colunm col-12 col-md-3">
-                    <label className="px-2 fw-bold" htmlFor="package-type">Package Type</label>
+                    <label className="px-2 fw-bold" htmlFor="package-type">{t('downloadDropdowns_packageType')}</label>
                     <select id="package-type-filter" onChange={(e) => setPackageType(e.target.value)} defaultValue={defaultPackageType} className="form-select form-select-sm">
-                        <option key="any" value="any">Any</option>
+                        <option key="any" value="any">{t('downloadDropdowns_option_any')}</option>
                         {packageTypes.map(
                             (packageType, i): string | JSX.Element => packageType && (
                                 <option key={packageType.toLowerCase()} value={packageType.toLowerCase()}>{packageType}</option>
@@ -103,7 +103,7 @@ const DownloadDropdowns = ({updaterAction, marketplace, Table}) => {
                     </select>
                 </div>
                 <div className="input-group-prepend flex-colunm col-12 col-md-3">
-                    <label className="px-2 fw-bold" htmlFor="version">Version</label>
+                    <label className="px-2 fw-bold" htmlFor="version">{t('downloadDropdowns_version')}</label>
                     <select id="version-filter" onChange={(e) => setVersion(e.target.value)} defaultValue={defaultVersion} className="form-select form-select-sm">
                         {versions.map(
                             (version, i): string | JSX.Element => version && (
