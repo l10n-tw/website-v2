@@ -11,7 +11,7 @@ const IndexPage = () => {
   const { t } = useTranslation()
   return (
     <Layout>
-      <Seo title='Home' />
+      <Seo title={t('Home')} />
       <section id='home' className='home' style={{ overflowX: 'hidden' }}>
         <div className='container-flex'>
           <div className='main-banner row justify-content-center align-items-center'>
@@ -42,14 +42,12 @@ const IndexPage = () => {
         </div>
         <div className='p-3 mt-4 mb-4 bg-light rounded-3 text-start'>
           <div className='container py-5'>
-            <h2 className='text-pink'>The Adoptium Working Group</h2>
-            <p>The Adoptium Working Group promotes and supports high-quality runtimes and associated technology for use across the Java ecosystem.
-              Our vision is to meet the needs of Eclipse and the broader Java community by providing runtimes for Java-based applications.
-              We embrace existing standards and a wide variety of hardware and cloud platforms.
+            <h2 className='text-pink'>{t('Adoptium Working Group title')}</h2>
+            <p>{t('Adoptium Working Group text')}
             </p>
             <div className='btn-group'>
-              <Link to='/join' className='btn btn-lg btn-primary m-3 text-white'>Join the Working group</Link>
-              <Link to='/members' className='btn btn-lg btn-secondary m-3'>View our members</Link>
+              <Link to='/join' className='btn btn-lg btn-primary m-3 text-white'>{t('join_working_group_btn')}</Link>
+              <Link to='/members' className='btn btn-lg btn-secondary m-3'>{t('view_our_members_btn')}</Link>
             </div>
           </div>
         </div>

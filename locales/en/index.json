@@ -1,6 +1,10 @@
 {
     "Prebuilt OpenJDK": "Prebuilt OpenJDK",
     "Binaries for Free!": "Binaries for Free!",
-    "Intro": "Java™ is the world's leading programming language and platform. The Adoptium Working Group promotes and supports high-quality, TCK certified runtimes and associated technology for use across the Java™ ecosystem. Eclipse Temurin is the name of the OpenJDK distribution from Adoptium."
+    "Intro": "Java™ is the world's leading programming language and platform. The Adoptium Working Group promotes and supports high-quality, TCK certified runtimes and associated technology for use across the Java™ ecosystem. Eclipse Temurin is the name of the OpenJDK distribution from Adoptium.",
+    "Adoptium Working Group title": "The Adoptium Working Group",
+    "Adoptium Working Group text": "The Adoptium Working Group promotes and supports high-quality runtimes and associated technology for use across the Java ecosystem. Our vision is to meet the needs of Eclipse and the broader Java community by providing runtimes for Java-based applications. We embrace existing standards and a wide variety of hardware and cloud platforms.",
+    "join_working_group_btn": "Join the Working group",
+    "view_our_members_btn": "View our members"
   }
   
