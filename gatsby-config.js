@@ -31,8 +31,9 @@ module.exports = {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
         localeJsonSourceName: 'locale',
-        languages: ['en', 'es', 'de'],
-        defaultLanguage: 'en'
+        languages: ['en', 'es', 'de', 'tw'],
+        defaultLanguage: 'en',
+        fallbackLanguage: 'en'
       }
     },
     'gatsby-transformer-asciidoc',
