@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useRef } from 'react';
-import { Link } from 'gatsby-plugin-react-i18next';
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { FaArrowCircleRight, FaArchive, FaDownload } from 'react-icons/fa';
 
@@ -12,7 +12,7 @@ let userOSAPIName
 let arch = 'x64'
 
 const LatestTemurin = (props): JSX.Element => {
-
+  const { t } = useTranslation();
   const userOS = detectOS();
   switch (userOS) {
     case UserOS.MAC:
@@ -55,29 +55,29 @@ const LatestTemurin = (props): JSX.Element => {
     return (
       <div ref={ref} className="container hide-on-mobile">
         {binary ? (
-          <h2 className={`fw-light mt-3 ${textClass}`}>Download Temurin for {userOSName} {arch}</h2>
+          <h2 className={`fw-light mt-3 ${textClass}`}>{t('latestTemurin_download_heading')} {userOSName} {arch} {t('latestTemurin_download_heading2')}</h2>
         ) :
-          <h2 className={`fw-light mt-3 ${textClass}`}>Download Temurin</h2>
+          <h2 className={`fw-light mt-3 ${textClass}`}>{t('latestTemurin_download_heading_fallback')}</h2>
         }
         <div className={`btn-group-vertical mx-auto ${buttonClass}`}>
             {binary ? (
               <>
                 <Link to="/download" state={{ link: binary.link }} className="btn btn-lg btn-primary mt-3 py-3 text-white">
-                    <FaDownload /> Latest LTS release
+                    <FaDownload /> {t('latestTemurin_release')}
                     <br/>
                     <span style={{ fontSize: '.6em'}} className="font-weight-light">{binary.release_name}</span>
                 </Link>
                 <Link to="/temurin/releases" className="btn btn-outline-dark mt-3">
-                    Other platforms and versions <FaArrowCircleRight />
+                    {t('latestTemurin_other_platforms_and_versions')}<FaArrowCircleRight />
                 </Link>
               </>
             ) :
               <Link to="/temurin/releases" className="btn btn-lg btn-primary mt-3 py-3 text-white">
-                  <FaDownload /> Latest LTS releases
+                  <FaDownload /> {t('latestTemurin_release')}
               </Link>
             }
             <Link to="/temurin/archive" className="btn btn-outline-dark mt-3">
-                Release archive <FaArchive />
+            {t('latestTemurin_archive')} <FaArchive />
             </Link>
         </div>
       </div>
