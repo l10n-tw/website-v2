@@ -1,0 +1,14 @@
+{
+    "archive_title": "Archive",
+    "archive_notice_text1": "Please be aware that this archive contains old releases and intermediate builds created as a development step towards a ",
+    "archive_link_to_releases": "full release",
+    "archive_notice_text2": ". ",
+    "archive_notice_text3": "Using old, superseded, or otherwise unsupported builds is not recommended. Intermediate builds are ephemeral, and may disappear in the future.",
+    "archive_notice_text4": "The following notice applies to intermediate builds:",
+    "archive_notice_text5": "\"This is an intermediate build made available for testing purposes only. The code is untested and presumed incompatible with the Java SE specification. You should not deploy or write to this code, but instead use the tested and certified Java SE compatible version of the code that is available at ",
+    "archive_link_to_home": "adoptium.net",
+    "archive_notice_text6": ". ",
+    "archive_notice_text7": "Redistribution of any Intermediate Build must retain this notice.\"",
+    "archive_latest_releases_btn": "Latest releases",
+    "archive_nightly_builds_btn": "Nightly builds"
+}
