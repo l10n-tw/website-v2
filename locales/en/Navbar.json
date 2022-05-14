@@ -1,0 +1,16 @@
+{
+    "navbar_home": "Home",
+    "navbar_documentation": "Documentation",
+    "navbar_faq": "FAQ",
+    "navbar_projects": "Projects",
+    "navbar_temurin": "Eclipse Temurin",
+    "navbar_aqavit": "Eclipse AQAvit",
+    "navbar_jmc": "Eclipse Mission Control",
+    "navbar_furtherInformation": "Further Information",
+    "navbar_about": "About",
+    "navbar_members": "Members",
+    "navbar_sponsors": "Sponsors",
+    "navbar_api": "API",
+    "navbar_blog": "Blog",
+    "navbar_status": "Status"
+}

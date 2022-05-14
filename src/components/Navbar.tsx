@@ -35,7 +35,7 @@ const Navbar = ({siteTitle}): JSX.Element => {
               <ExactNavLink
                 to="/"
               >
-                {t('Home')}
+                {t('navbar_home')}
               </ExactNavLink>
             </li>
             {/* <li className="nav-item">
@@ -49,37 +49,37 @@ const Navbar = ({siteTitle}): JSX.Element => {
               <ExactNavLink
                 to="/docs"
               >
-                Documentation
+                {t('navbar_documentation')}
               </ExactNavLink>
             </li>
             <li className="nav-item">
               <ExactNavLink
                 to="/docs/faq"
               >
-                FAQ
+                {t('navbar_faq')}
               </ExactNavLink>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Projects
+                {t('navbar_projects')}
               </Link>
               <ul className="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
-                <li><ExactNavLink className="dropdown-item" to="/temurin">Eclipse Temurin</ExactNavLink></li>
-                <li><ExactNavLink className="dropdown-item" to="/aqavit">Eclipse AQAvit</ExactNavLink></li>
-                <li><ExactNavLink className="dropdown-item" to="/jmc">Eclipse Mission Control</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/temurin">{t('navbar_temurin')}</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/aqavit">{t('navbar_aqavit')}</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/jmc">{t('navbar_jmc')}</ExactNavLink></li>
               </ul>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Further Information
+                {t('navbar_furtherInformation')}
               </Link>
               <ul className="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
-                <li><ExactNavLink className="dropdown-item" to="/about">About</ExactNavLink></li>
-                <li><ExactNavLink className="dropdown-item" to="/members">Members</ExactNavLink></li>
-                <li><ExactNavLink className="dropdown-item" to="/sponsors">Sponsors</ExactNavLink></li>
-                <li><a className="nav-link" href="https://api.adoptium.net">API</a></li>
-                <li><a className="nav-link" href="https://blog.adoptium.net">Blog</a></li>
-                <li><a className="nav-link" href="https://status.adoptium.net">Status</a></li>
+                <li><ExactNavLink className="dropdown-item" to="/about">{t('navbar_about')}</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/members">{t('navbar_members')}</ExactNavLink></li>
+                <li><ExactNavLink className="dropdown-item" to="/sponsors">{t('navbar_sponsors')}</ExactNavLink></li>
+                <li><a className="nav-link" href="https://api.adoptium.net">{t('navbar_api')}</a></li>
+                <li><a className="nav-link" href="https://blog.adoptium.net">{t('navbar_blog')}</a></li>
+                <li><a className="nav-link" href="https://status.adoptium.net">{t('navbar_status')}</a></li>
               </ul>
             </li>
           </ul>
