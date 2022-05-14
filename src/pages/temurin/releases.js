@@ -1,21 +1,23 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import { FaArrowCircleRight } from 'react-icons/fa'
-
 import Layout from '../../components/Layout'
 import Seo from '../../components/Seo'
 import DownloadDropdowns from '../../components/DownloadDropdowns'
 import DownloadTable from '../../components/TemurinDownloadTable'
 import ChecksumModal from '../../components/ChecksumModal'
 import { loadLatestAssets } from '../../hooks'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+const TemurinReleases = () => {
+  const { t } = useTranslation()
+  return (
 
-const TemurinReleases = () => (
   <Layout>
-    <Seo title='Latest releases' />
+    <Seo title={t('releases_title')} />
     <section className='py-5 text-center container'>
       <div className='row py-lg-5'>
         <div className='col-lg-10 col-md-8 mx-auto'>
-          <h1 className='fw-light'>Eclipse Temurin™ Latest Releases</h1>
+          <h1 className='fw-light'>{t('releases_header')}</h1>
           <div className='row align-items-center pt-3'>
             <div className='col-6 col-md-4'>
               <img
@@ -26,35 +28,31 @@ const TemurinReleases = () => (
               />
             </div>
             <div className='col-12 col-sm-6 col-md-8'>
-              <p className='text-start'>
-                Eclipse Temurin is the open source Java SE build based upon OpenJDK.
-                Temurin is available for a <a href='/supported-platforms'>wide range of platforms</a> and Java SE versions.
-                The latest releases recommended for use in production are listed below, and are regularly <a href='/support'>updated and supported</a> by the Adoptium community. Migration help, container images and package installation guides are available in the <a href='/docs'>documentation section</a>.
+              <p className='text-start'>{t('releases_text1')}
+                <a href='/supported-platforms'>{t('releases_link_supported_platforms')}</a>{t('releases_text2')}<a href='/support'>{t('releases_link_support')}</a>{t('releases_text3')}<a href='/docs'>{t('releases_link_docs')}</a>{t('releases_text4')}
               </p>
             </div>
           </div>
         </div>
       </div>
       <div className='row align-items-center pt-3'>
-        <p className='text-center'>
-          Use the drop-down boxes below to filter the list of current releases.
+        <p className='text-center'>{t('releases_filter_description')}
         </p>
       </div>
       <DownloadDropdowns updaterAction={loadLatestAssets} marketplace={false} Table={DownloadTable} />
       <ChecksumModal />
       <div className='row align-items-center pt-3'>
-        <p className='text-center'>
-          Previous releases are available in the Temurin archive.
+        <p className='text-center'>{t('releases_previous_releases')}
         </p>
         <div className='btn-group-vertical col-6 mx-auto'>
-          <Link to='/temurin/archive' className='btn btn btn-primary mt-3'>
-            Build archive <FaArrowCircleRight />
+          <Link to='/temurin/archive' className='btn btn btn-primary mt-3'>{t('releases_archive_btn')} <FaArrowCircleRight />
           </Link>
         </div>
       </div>
     </section>
   </Layout>
-)
+  )
+}
 
 export default TemurinReleases
 
